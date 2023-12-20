@@ -6,7 +6,9 @@ const errorMiddleware = require("./middlewares/error");
 app.use(express.json());
 // routes
 const products = require("./routes/productRoute");
-app.use("/api",products)
+const user = require("./routes/userRoutes");
+app.use("/api",products);
+app.use("/api",user);
 
 app.use(errorMiddleware);
 
